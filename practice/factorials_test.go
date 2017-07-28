@@ -1,4 +1,4 @@
-package recurse
+package practice
 
 import "testing"
 

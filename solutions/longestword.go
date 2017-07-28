@@ -1,5 +1,4 @@
-// Package stringutils challenges
-package stringutils
+package solutions
 
 import (
 	"fmt"
