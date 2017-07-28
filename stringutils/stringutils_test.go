@@ -2,9 +2,9 @@ package stringutils
 
 import "testing"
 
-func TestReverseString(t *testing.T) {
+func TestFirstReverse(t *testing.T) {
 	var s string
-	s = ReverseString("This is a test")
+	s = FirstReverse("This is a test")
 
 	if s != "tset a si sihT" {
 		t.Error("Expected string to be reversed, got ", s)
