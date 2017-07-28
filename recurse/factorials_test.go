@@ -1,4 +1,4 @@
-package factorials
+package recurse
 
 import "testing"
 

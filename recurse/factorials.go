@@ -1,5 +1,5 @@
 // Package factorials challenges
-package factorials
+package recurse
 
 import ()
 
