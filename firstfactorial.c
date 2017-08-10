@@ -3,7 +3,7 @@
 
 int FirstFactorial(int n) {
 	if (n == 1) return 1;
-	return (n * FirstFactorial(n -1));
+	return (n * FirstFactorial(n - 1));
 }
 
 Test(First_Factorial, check_4) {
