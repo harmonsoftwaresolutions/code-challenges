@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-char *reverseString(char *c) {
+char* reverseString(char *c) {
 	int ln, s;
 	char *ptr = NULL;
 
@@ -13,7 +13,6 @@ char *reverseString(char *c) {
 	ptr = malloc(sizeof(char)*(ln + 1));
 	// add characters
 	for (int i = 0; i < ln; i++) {
-		printf("c i %d\n", ln - i - 1);
 		ptr[i] = c[s - i];
 	}
 	return ptr;
@@ -21,6 +20,20 @@ char *reverseString(char *c) {
 
 Test(ReverseString, check1) {
 	char s[] = "hello world";
-	char *e = reverseString(s);
-	// need to test expect
+	char *r = reverseString(s);
+	char e[] = "dlrow olleh";
+
+	cr_log_info("s %s\n", r);
+	cr_log_info("expect %s\n", e);
+	cr_expect_str_eq(r, e, "test");
+}
+
+Test(ReverseString, check2) {
+	char s[] = "Hello World and Coders";
+	char *r = reverseString(s);
+	char e[] = "sredoC dna dlroW olleH";
+
+	cr_log_info("s %s\n", r);
+	cr_log_info("expect %s\n", e);
+	cr_expect_str_eq(r, e, "should be %s", e);
 }
