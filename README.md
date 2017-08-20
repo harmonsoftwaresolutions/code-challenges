@@ -29,7 +29,7 @@ return the largest word in the string. If there are two or more words that
 are the same length, return the first word from the string with that length.
 Ignore punctuation and assume sen will not be empty.
 
-Test Cases:
+### Test Cases:
 a beautiful sentence^&!
 letter after letter
 hello world
@@ -103,10 +103,22 @@ return the number of hours and minutes the parameter converts to
 (ie. if num = 63 then the output should be 1:3). Separate the number of
 hours and minutes with a colon. 
 
-## Test Cases:
+### Test Cases:
 Input:126
 Output:"2:6"
 
 Input:45
 Output:"0:45"
 
+## Vowel Count
+Have the function VowelCount(str) take the str string parameter being
+passed and return the number of vowels the string contains
+(ie. "All cows eat grass and moo" would return 8). Do not count y as a
+vowel for this challenge. 
+
+### Test Cases:
+Input:"hello"
+Output:2
+
+Input:"coderbyte"
+Output:3
