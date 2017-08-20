@@ -6,7 +6,7 @@
 #  would be false. The string will not be empty and will have at least one
 #  letter.
 
-def SimpleSymbols(s):
+def SimpleSymbols1(s):
 	test = None
 	ln = len(s) - 1
 	for i, c in enumerate(s):
@@ -20,6 +20,22 @@ def SimpleSymbols(s):
 	return test
 
 def test1():
-	assert SimpleSymbols("f++d+") == "false"
-	assert SimpleSymbols("+d===+a+") == "false"
-	assert SimpleSymbols("+d+") == "true"
+	assert SimpleSymbols1("f++d+") == "false"
+	assert SimpleSymbols1("+d===+a+") == "false"
+	assert SimpleSymbols1("+d+") == "true"
+
+def SimpleSymbols2(s):
+	# append to string to avoid any out of index errors
+	s = '=' + s + '='
+	li = list(s)
+	for i in range(0, len(li)):
+
+		if li[i].isalpha():
+			if li[i-1] != '+' or li[i+1] != '+':
+				return "false"
+	return "true"
+
+def test2():
+	assert SimpleSymbols2("f++d+") == "false"
+	assert SimpleSymbols2("+d===+a+") == "false"
+	assert SimpleSymbols2("+d+") == "true"
