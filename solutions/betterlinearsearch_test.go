@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestLinearSearch(t *testing.T) {
+func TestBetterLinearSearch(t *testing.T) {
 	var arr = []string{
 		"NZ4b",
 		"O0tL",
@@ -18,9 +18,11 @@ func TestLinearSearch(t *testing.T) {
 		"tDAg",
 		"Fctk",
 	}
-	var res []string
-	res = LinearSearch(arr, len(arr), "tDAg")
+	res, i := BetterLinearSearch(arr, len(arr), "tURG")
 	if res[0] == "not found" {
 		t.Error("no value found")
+	}
+	if i > 7 {
+		t.Error("for loop did not break")
 	}
 }
