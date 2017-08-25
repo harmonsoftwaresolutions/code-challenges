@@ -9,7 +9,11 @@ your goal is to find the lowest common ancestor of these two values. For
 example: if strArr is ["[10, 5, 1, 7, 40, 50]", "1", "7"] then this tree
 looks like the following: 
 
- 
+      10
+
+  5       40
+
+1   7       50 
 
 For the input above, your program should return 5 because that is the
 value of the node that is the LCA of the two nodes with values 1 and 7.
