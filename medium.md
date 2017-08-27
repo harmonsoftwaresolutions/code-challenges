@@ -21,6 +21,9 @@ You can assume the two nodes you are searching for in the tree will
 exist somewhere in the tree. 
 
 ### Test Cases:
+Input:"[10, 5, 1, 7, 40, 50]", "1", "7"
+Output:5
+
 Input:"[10, 5, 1, 7, 40, 50]", "5", "10"
 Output:10
 
