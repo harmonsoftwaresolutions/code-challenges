@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <strings.h>
 
 struct Node {
 	int data;
@@ -16,27 +17,45 @@ struct Node *newNode(int data) {
 	return node;
 };
 
+struct Node *LCA(struct Node *root, int n1, int n2) {
+	if (!root) return NULL;
+
+	if (root->data > n1 && root->data > n2)
+		return LCA(root->left, n1, n2);
+
+	if (root->data < n1 && root->data < n2)
+		return LCA(root->right, n1, n2);
+	
+	return root;
+};
+
 void PrintTree(struct Node *root) {
-	printf("\t\troot %d %p\n", root->data, root);
-	printf("\tr l %d %p\t\t", root->left->data, root->left);
-	printf("r r %d %p\t\t\n", root->right->data, root->right);
-	printf("r l l %d %p\t", root->left->left->data, root->left->left);
-	printf("r l r %d %p\t\n", root->left->right->data, root->left->right);
+	printf("\t\t\t%d\n", root->data);
+	printf("\t%d", root->left->data);
+	printf("\t\t\t\t%d\n", root->right->data);
+	printf("%d", root->left->left->data);
+	printf("\t\t%d\n", root->left->right->data);
 
 	return;
 };
 
 int main(int argc, char *argv[]) {
-	struct Node *root = newNode(1);
-	root->left = newNode(2);
-	root->right = newNode(3);
+	struct Node *root = newNode(20);
+	root->left = newNode(8);
+	root->right = newNode(22);
 	root->left->left = newNode(4);
-	root->left->right = newNode(5);
+	root->left->right = newNode(12);
+	root->right->left = newNode(10);
+	root->right->right = newNode(14);
 
 	printf("\t\t *** BINARY TREE ***\n");
 	PrintTree(root);
+	printf("\n");
 
-	printf("*** Recursive Traverse\n");
+	int n1 = 10, n2 = 14;
+	struct Node *t = LCA(root, n1, n2);
+	printf("*** LCA Traverse\n");
+	printf("LCA of %d and %d is %d\n", n1, n2, t->data);
 	printf("\n");
 
 	return 0;
